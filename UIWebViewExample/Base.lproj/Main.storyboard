@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGE-EB-EVK">
+                                <rect key="frame" x="0.0" y="130" width="414" height="732"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6gB-kk-ngw">
+                                <rect key="frame" x="16" y="60" width="382" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="w4E-3x-CSm">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xD-oC-P40">
+                                                <rect key="frame" x="0.0" y="0.0" width="122" height="31"/>
+                                                <state key="normal" title="Load URL"/>
+                                                <connections>
+                                                    <action selector="loadURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ONd-AO-rfM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gk-Zc-8XP">
+                                                <rect key="frame" x="130" y="0.0" width="122" height="31"/>
+                                                <state key="normal" title="Load HTML"/>
+                                                <connections>
+                                                    <action selector="loadHTMLFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F1J-JZ-0Ly"/>
+                                                </connections>
+                                            </button>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dgo-nQ-7mC">
+                                                <rect key="frame" x="260" y="0.0" width="122" height="32"/>
+                                                <segments>
+                                                    <segment title="google"/>
+                                                    <segment title="facebook"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="switchPage:" destination="BYZ-38-t0r" eventType="valueChanged" id="4fY-cQ-j0A"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uZ1-Qf-wdm">
+                                        <rect key="frame" x="0.0" y="39" width="382" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXN-Xj-cw0">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="31"/>
+                                                <state key="normal" title="Forward"/>
+                                                <connections>
+                                                    <action selector="webViewForward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CE9-jZ-pc7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeU-Vw-oet">
+                                                <rect key="frame" x="97.5" y="0.0" width="89.5" height="31"/>
+                                                <state key="normal" title="Backward"/>
+                                                <connections>
+                                                    <action selector="webViewBackwards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tqz-Pn-Snc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWk-dq-Yr8">
+                                                <rect key="frame" x="195" y="0.0" width="89.5" height="31"/>
+                                                <state key="normal" title="Reload"/>
+                                                <connections>
+                                                    <action selector="webViewReload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hcu-uc-hwV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwA-vI-PGi">
+                                                <rect key="frame" x="292.5" y="0.0" width="89.5" height="31"/>
+                                                <state key="normal" title="Stop"/>
+                                                <connections>
+                                                    <action selector="webViewStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nca-ml-AD9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6gB-kk-ngw" secondAttribute="trailing" constant="16" id="02o-Yb-rDb"/>
+                            <constraint firstItem="6gB-kk-ngw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="6Oe-NA-wcV"/>
+                            <constraint firstItem="AGE-EB-EVK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wc3-C5-Fk5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AGE-EB-EVK" secondAttribute="trailing" id="mth-nu-Oxc"/>
+                            <constraint firstItem="6gB-kk-ngw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="n5d-Q6-s55"/>
+                            <constraint firstItem="AGE-EB-EVK" firstAttribute="top" secondItem="6gB-kk-ngw" secondAttribute="bottom" id="ohJ-QL-bVr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AGE-EB-EVK" secondAttribute="bottom" id="peE-az-K3J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="AGE-EB-EVK" id="Xaq-kq-0pi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>
+        </scene>
+    </scenes>
+</document>
